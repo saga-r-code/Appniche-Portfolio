@@ -13,7 +13,7 @@ const Navbar = () => {
   return (
     <div className="fixed w-full backdrop-blur-xl shadow-md shadow-slate-400 z-50">
       <div className="flex justify-between items-center px-5 md:px-6 lg:px-14 py-5 text-white">
-        <h1 className="text-2xl sm:text-3xl md:text-2xl lg:text-3xl xl:text-4xl font-bold hover:text-blue-400">
+        <h1 className="text-2xl sm:text-3xl md:text-2xl lg:text-3xl xl:text-4xl tracking-tighter font-bold gradient-text bg-gradient-to-r from-blue-500 to-blue-800">
           <a href="#">Appniche Technology</a>
         </h1>
 

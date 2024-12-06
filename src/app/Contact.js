@@ -48,6 +48,7 @@ const Contact = () => {
       whatsapp: "https://wa.me/+917977528656",
       github: "https://github.com/Redhood-Schizophrenic",
     },
+
   ];
   return (
     <div id="contact" className=" max-h-screen mt-32">

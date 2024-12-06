@@ -65,7 +65,7 @@ const Service = () => {
           and more.
         </p>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7 relative">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3  gap-8 relative">
       <div className="bg-gradient-to-r from-blue-500 to-blue-600 h-[30vh] w-[30vw] blur-3xl  rounded-full absolute top-10 -left-20 "></div>
         <div className="bg-gradient-to-r from-blue-500 to-blue-600 h-[30vh] w-[30vw] blur-3xl  rounded-full absolute  -right-20 bottom-10 "></div>
         {services.map((service, index) => {
@@ -81,7 +81,7 @@ const Service = () => {
                   index % 2 === 0 ? "object-center" : "object-center"
                 }`}
               />
-              <div className="px-4 py-2 text-center">
+              <div className="px-4 py-1 flex justify-center items-center flex-col gap-3 text-center">
                 <h2 className="text-3xl font-semibold text-white mb-2">
                   {service.title}
                 </h2>
