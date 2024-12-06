@@ -1,10 +1,11 @@
 import React from "react";
 
+import Image from "next/image";
 const Service = () => {
   const services = [
     {
       id: 1,
-      imgSrc: "./landing.png",
+      imgSrc: "/landing.png",
       alt: "Landing Page Development",
       title: "Landing Page Development",
       description:
@@ -12,7 +13,7 @@ const Service = () => {
     },
     {
       id: 2,
-      imgSrc: "./web-app.png",
+      imgSrc: "/web-app.png",
       alt: "Web App Development",
       title: "Web App Development",
       description:
@@ -20,7 +21,7 @@ const Service = () => {
     },
     {
       id: 3,
-      imgSrc: "./app-design.png",
+      imgSrc: "/app-design.png",
       alt: "App Development",
       title: "App Development",
       description:
@@ -28,7 +29,7 @@ const Service = () => {
     },
     {
       id: 4,
-      imgSrc: "./pos.png",
+      imgSrc: "/pos.png",
       alt: "POS Software",
       title: "Custom POS",
       description:
@@ -36,7 +37,7 @@ const Service = () => {
     },
     {
       id: 5,
-      imgSrc: "./software.png",
+      imgSrc: "/software.png",
       alt: "UI/UX Design",
       title: "UI/UX Design",
       description:
@@ -44,7 +45,7 @@ const Service = () => {
     },
     {
       id: 6,
-      imgSrc: "./marketing.png",
+      imgSrc: "/marketing.png",
       alt: "Digital Marketing",
       title: "Digital Marketing",
       description:
@@ -55,7 +56,9 @@ const Service = () => {
     <div id="services" className=" px-5 min-h-screen my-32">
       <div className="flex justify-center items-center flex-col gap-5">
         <div className="flex justify-center items-center flex-col gap-1 ">
-          <h1 className="text-3xl md:text-4xl tracking-widest  font-bold ">Our Services</h1>
+          <h1 className="text-3xl md:text-4xl tracking-widest  font-bold ">
+            Our Services
+          </h1>
           <span className="bg-blue-500 w-24 h-[5px] rounded-full"></span>
         </div>
         <p className="text-center text-slate-400 max-w-[650px] mb-10">
@@ -66,7 +69,7 @@ const Service = () => {
         </p>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3  gap-8 relative">
-      <div className="bg-gradient-to-r from-blue-500 to-blue-600 h-[30vh] w-[30vw] blur-3xl  rounded-full absolute top-10 -left-20 "></div>
+        <div className="bg-gradient-to-r from-blue-500 to-blue-600 h-[30vh] w-[30vw] blur-3xl  rounded-full absolute top-10 -left-20 "></div>
         <div className="bg-gradient-to-r from-blue-500 to-blue-600 h-[30vh] w-[30vw] blur-3xl  rounded-full absolute  -right-20 bottom-10 "></div>
         {services.map((service, index) => {
           return (
@@ -74,10 +77,12 @@ const Service = () => {
               key={service.id}
               className="flex flex-col z-10 items-center gap-6 p-4 border border-slate-600 rounded-lg shadow-lg bg-slate-950 hover:scale-105 duration-300"
             >
-              <img
+              <Image
                 src={service.imgSrc}
                 alt={service.alt}
-                className={`w-full h-64 bg-black overflow-hidden rounded-xl object-cover  ${
+                width={640} // Set the width of the image
+                height={256} // Set the height of the image
+                className={`w-full h-64 bg-black overflow-hidden rounded-xl object-cover ${
                   index % 2 === 0 ? "object-center" : "object-center"
                 }`}
               />

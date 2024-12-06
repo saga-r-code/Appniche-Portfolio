@@ -37,7 +37,7 @@ const About = () => {
           </p>
           <p>
             We are always available to answer any questions or concerns that you
-            may have, so don't hesitate to reach out to us.
+            may have, so do not hesitate to reach out to us.
           </p>
           <button className="bg py-2 px-5  mt-3 duration-300 rounded-lg text-xl hover:scale-95 hover:shadow-inner hover:shadow- hover:translate-x-1 font-bold bg-blue-500 text-white ">
             <a href="#contact"> Contact Us</a>
