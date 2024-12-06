@@ -49,7 +49,7 @@ const Projects = () => {
     <div id="projects" className="projects-section  min-h-screen my-32">
       <div className="flex justify-center items-center flex-col gap-5 px-5">
         <div className="flex justify-center items-center flex-col gap-1 ">
-          <h1 className="text-3xl md:text-4xl tracking-widest  font-bold ">
+          <h1 className="text-3xl md:text-4xl tracking-widest uppercase  font-bold ">
             Our Projects
           </h1>
           <span className="bg-blue-500 w-24 h-[5px] rounded-full"></span>

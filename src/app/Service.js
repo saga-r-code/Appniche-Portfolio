@@ -56,7 +56,7 @@ const Service = () => {
     <div id="services" className=" px-5 min-h-screen my-32">
       <div className="flex justify-center items-center flex-col gap-5">
         <div className="flex justify-center items-center flex-col gap-1 ">
-          <h1 className="text-3xl md:text-4xl tracking-widest  font-bold ">
+          <h1 className="text-3xl md:text-4xl tracking-widest uppercase  font-bold ">
             Our Services
           </h1>
           <span className="bg-blue-500 w-24 h-[5px] rounded-full"></span>
