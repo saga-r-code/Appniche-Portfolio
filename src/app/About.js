@@ -2,7 +2,7 @@ import React from "react";
 
 const About = () => {
   return (
-    <div id="about" className="max-h-screen relative mb-32">
+    <div id="about" className="min-h-screen relative mb-32">
       <div className="bg-[linear-gradient(to_right_top,_#151533,_#151530,_#16162d,_#16162a,_#161627)] h-[35vh] w-[35vw] blur-2xl  rounded-full absolute top-1/4 -left-1/4 "></div>
       <div className="bg-[radial-gradient(circle,_#201823,_#1f1822,_#1e1821,_#1d1820,_#1c181f)] h-[35vh] w-[35vw] blur-2xl  rounded-full absolute  -right-1/4 bottom-10"></div>
       <div className="flex justify-center items-center flex-col gap-1 z-10">

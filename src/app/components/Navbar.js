@@ -42,7 +42,7 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         {toggle && (
-          <div className="absolute top-[70px] h-dvh left-0 w-full backdrop-blur-xl shadow-md shadow-slate-400 text-slate-400 tracking-wider font-semibold text-lg flex flex-col gap-6 py-4 px-5">
+          <div className="absolute top-[70px] h-dvh left-0 w-full bg-black z-50 text-slate-400 tracking-wider font-semibold text-lg flex flex-col gap-6 py-4 px-5">
             <ul className="flex flex-col items-start gap-20 py-20">
               <li className="hover:text-blue-400 cursor-pointer border-b-2 w-full">
                 <a href="#about" onClick={handleToggle}>About Us</a>

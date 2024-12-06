@@ -4,7 +4,7 @@ import React from "react";
 
 const Contact = () => {
   return (
-    <div className="mt-10">
+    <div className="mt-10  max-h-screen">
       <div className=" bg-slate-950 py-10 px-5">
         <p className="text-center text-sm sm:text-base leading-relaxed tracking-wide ">
           ©Copyright 2024. All right reserved by{" "}
