@@ -57,7 +57,7 @@ const Contact = () => {
         </h1>
         <span className="bg-blue-500 w-24 h-[5px] rounded-full"></span>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-7 mt-10 px-5 bg-slate-950 py-10 border-t border-b border-slate-700 border-gradient-to-r from-slate-700 to-slate-900">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-7 mt-10 px-5 bg-slate-950 py-10 border-t border-b border-slate-700 border-gradient-to-r from-slate-700 to-slate-900">
         {contact.map((item) => (
           <div
             key={item.id}
