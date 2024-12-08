@@ -1,3 +1,4 @@
+// src/app/hooks/useCopyHandler.js
 import { useEffect } from "react";
 
 const useCopyHandler = () => {

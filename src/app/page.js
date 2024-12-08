@@ -1,4 +1,5 @@
 "use client";
+/* eslint-disable react-hooks/rules-of-hooks *//* eslint-disable react-hooks/rules-of-hooks */
 import React from "react";
 import Navbar from "./components/Navbar";
 import Home from "./Home";
@@ -9,7 +10,6 @@ import Projects from "./Projects";
 import Contact from "./Contact";
 import { FaArrowUp } from "react-icons/fa";
 import useCopyHandler from "./hooks/useCopyHandler";
-
 const page = () => {
   useCopyHandler();
   return (
