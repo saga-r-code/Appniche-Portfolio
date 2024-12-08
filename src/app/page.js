@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect } from "react";
+import React from "react";
 import Navbar from "./components/Navbar";
 import Home from "./Home";
 import Footer from "./footer";
@@ -9,33 +9,6 @@ import Projects from "./Projects";
 import Contact from "./Contact";
 import { FaArrowUp } from "react-icons/fa";
 const page = () => {
-  useEffect(() => {
-    const handleCopy = (event) => {
-      // Prevent the default copy behavior
-      event.preventDefault();
-
-      // Set custom text to the clipboard
-      const customText =
-        "☺️😂";
-      if (event.clipboardData) {
-        event.clipboardData.setData("text/plain", customText);
-      } else if (window.clipboardData) {
-        // For older browsers
-        window.clipboardData.setData("Text", customText);
-      }
-
-     
-    };
-
-    // Attach the copy event listener
-    document.addEventListener("copy", handleCopy);
-
-    // Cleanup the event listener on component unmount
-    return () => {
-      document.removeEventListener("copy", handleCopy);
-    };
-  }, []);
-
   return (
     <div className=" text-white overflow-hidden relative">
       <Navbar />
