@@ -1,30 +1,7 @@
 "use client";
-import React, { useEffect } from "react";
-
+import React from "react";
 const Home = () => {
-  useEffect(() => {
-    const handleCopy = (event) => {
-      // Prevent the default copy behavior
-      event.preventDefault();
-
-      // Set custom text to the clipboard
-      const customText = "☺️😂";
-      if (event.clipboardData) {
-        event.clipboardData.setData("text/plain", customText);
-      } else if (window.clipboardData) {
-        // For older browsers
-        window.clipboardData.setData("Text", customText);
-      }
-    };
-
-    // Attach the copy event listener
-    document.addEventListener("copy", handleCopy);
-
-    // Cleanup the event listener on component unmount
-    return () => {
-      document.removeEventListener("copy", handleCopy);
-    };
-  }, []);
+ 
   return (
     <div className="home-container  relative ">
       <div className="bg-[linear-gradient(to_right_top,_#151533,_#151530,_#16162d,_#16162a,_#161627)] h-[40vh] w-[40vw] blur-3xl  rounded-full absolute top-1/4 -left-1/4 "></div>

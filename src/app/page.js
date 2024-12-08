@@ -8,7 +8,10 @@ import Service from "./Service";
 import Projects from "./Projects";
 import Contact from "./Contact";
 import { FaArrowUp } from "react-icons/fa";
+import useCopyHandler from "./hooks/useCopyHandler";
+
 const page = () => {
+  useCopyHandler();
   return (
     <div className=" text-white overflow-hidden relative">
       <Navbar />
