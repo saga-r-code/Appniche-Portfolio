@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-import { motion } from "framer-motion";
 import {
   FaInstagram,
   FaGithub,
@@ -59,10 +58,8 @@ const Contact = () => {
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-purple-600/10 rounded-full mix-blend-multiply filter blur-3xl animate-pulse delay-1000"></div>
       </div>
 
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
+      <div
+        
         className="container mx-auto px-6 relative z-10"
       >
         <div className="text-center mb-20">
@@ -81,11 +78,9 @@ const Contact = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {contact.map((member, index) => (
-            <motion.div
+            <div
               key={member.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+              
               className="group relative"
             >
               <div className="relative p-6 bg-gradient-to-b from-slate-900 to-slate-950 rounded-xl border border-slate-800 hover:border-blue-500/50 transition-all duration-300 shadow-lg hover:shadow-blue-500/5">
@@ -133,10 +128,10 @@ const Contact = () => {
                   </div>
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
-      </motion.div>
+      </div>
     </div>
   );
 };
