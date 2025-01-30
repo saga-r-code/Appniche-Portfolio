@@ -1,47 +1,117 @@
+"use client";
 import React from "react";
+import { motion } from "framer-motion";
 
 const About = () => {
+  const features = [
+    {
+      title: "Expert Development",
+      description: "Team of passionate developers, designers and project managers ready for challenges",
+      icon: "💻"
+    },
+    {
+      title: "Quality First",
+      description: "Delivering high quality products and services with attention to detail",
+      icon: "⭐"
+    },
+    {
+      title: "Client Partnership",
+      description: "Transparent communication and honest collaboration with clients",
+      icon: "🤝"
+    },
+    {
+      title: "24/7 Support",
+      description: "Always available to answer questions and address concerns",
+      icon: "📞"
+    }
+  ];
+
   return (
-    <div id="about" className="min-h-screen relative mb-32">
-      <div className="bg-[linear-gradient(to_right_top,_#151533,_#151530,_#16162d,_#16162a,_#161627)] h-[35vh] w-[35vw] blur-2xl  rounded-full absolute top-1/4 -left-1/4 "></div>
-      <div className="bg-[radial-gradient(circle,_#201823,_#1f1822,_#1e1821,_#1d1820,_#1c181f)] h-[35vh] w-[35vw] blur-2xl  rounded-full absolute  -right-1/4 bottom-10"></div>
-      <div className="flex justify-center items-center flex-col gap-1 z-10">
-        <h1 className="text-3xl tracking-widest md:text-4xl font-bold uppercase">
-          About Us
-        </h1>
-        <span className="bg-blue-500 w-14 h-[5px] rounded-full"></span>
+    <div id="about" className="min-h-screen py-32 relative overflow-hidden">
+      {/* Animated background elements */}
+      <div className="absolute inset-0">
+        <div className="absolute top-20 -left-10 w-72 h-72 bg-blue-600/10 rounded-full mix-blend-multiply filter blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-20 -right-10 w-72 h-72 bg-purple-600/10 rounded-full mix-blend-multiply filter blur-3xl animate-pulse delay-1000"></div>
       </div>
-      <div className="flex justify-center items-center my-5 px-3 z-10">
-        <div className="flex tracking-wide font-semibold overflow-hidden relative justify-center items-start gap-5 flex-col rounded-2xl bg-opacity-50  xl:w-1/2 p-10 text-white mt-5 md:text-lg lg:text-xl  backdrop-blur-md shadow-lg shadow-slate-500/50 bg-[#10100d] ">
-          <div className="w-[20vw] h-[20vh] md:w-[14vw] md:h-[14vh] xl:w-[14vw] xl:h-[14vh] -top-20 lg:-top-24 -left-5 absolute -z-50 bg-blue-600 blur-2xl rounded-full"></div>
-          <div className="w-[20vw] h-[20vh] md:w-[14vw] md:h-[14vh] xl:w-[14vw]  -bottom-20 -right-16 absolute -z-50 bg-blue-600 blur-2xl rounded-full"></div>
-          <p>
-            Appniche Technology is a web development company offering a wide
-            range of services, such as landing page development, web app
-            development, UI/UX design, mobile app development, custom POS
-            software development, digital marketing, and more.
-          </p>
-          <p>
-            We are a team of passionate developers, designers and project
-            managers who are always ready to take on new challenges and deliver
-            the best results.
-          </p>
-          <p>
-            We believe in delivering high quality products and services to our
-            clients and we are always open to new ideas and feedback.
-          </p>
-          <p>
-            We are also very proud of our transparency and honesty with our
-            clients. We believe that our clients are our partners and we always
-            try to give them the best possible experience.
-          </p>
-          <p>
-            We are always available to answer any questions or concerns that you
-            may have, so do not hesitate to reach out to us.
-          </p>
-          <button className="bg py-2 px-5  mt-3 duration-300 rounded-lg text-xl hover:scale-95 hover:shadow-inner hover:shadow- hover:translate-x-1 font-bold bg-blue-500 text-white ">
-            <a href="#contact"> Contact Us</a>
-          </button>
+
+      <div className="container mx-auto px-6 relative z-10">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500 text-lg font-bold uppercase tracking-wider mb-3">
+            Who We Are
+          </h2>
+          <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+            About Appniche Technology
+          </h1>
+          <div className="flex justify-center gap-2 mb-8">
+            <span className="w-16 h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"></span>
+            <span className="w-4 h-1 bg-blue-500/50 rounded-full"></span>
+            <span className="w-2 h-1 bg-purple-500/50 rounded-full"></span>
+          </div>
+        </motion.div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+            className="space-y-6 text-lg text-slate-300"
+          >
+            <p className="leading-relaxed">
+              Appniche Technology is a comprehensive web development company offering a wide
+              range of services, including landing page development, web app
+              development, UI/UX design, mobile app development, custom POS
+              software development, and digital marketing.
+            </p>
+            <div className="grid grid-cols-2 gap-6 mt-8">
+              {features.map((feature, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className="p-4 rounded-lg bg-gradient-to-b from-slate-800/50 to-slate-900/50 border border-slate-700/50"
+                >
+                  <span className="text-3xl mb-2 block">{feature.icon}</span>
+                  <h3 className="text-lg font-semibold text-white mb-2">{feature.title}</h3>
+                  <p className="text-sm text-slate-400">{feature.description}</p>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+            className="space-y-6"
+          >
+            <div className="p-8 rounded-2xl bg-gradient-to-b from-slate-800/50 to-slate-900/50 border border-slate-700/50 backdrop-blur-sm">
+              <h3 className="text-2xl font-bold text-white mb-4">Our Commitment</h3>
+              <div className="space-y-4">
+                <p className="text-slate-300">
+                  We believe in delivering high quality products and services to our
+                  clients and we are always open to new ideas and feedback.
+                </p>
+                <p className="text-slate-300">
+                  We are very proud of our transparency and honesty with our
+                  clients. We believe that our clients are our partners and we always
+                  try to give them the best possible experience.
+                </p>
+                <motion.button
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="mt-6 px-8 py-3 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg font-semibold hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300"
+                >
+                  <a href="#contact">Get in Touch</a>
+                </motion.button>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </div>
     </div>

@@ -1,6 +1,8 @@
+"use client";
 import React from "react";
-
 import Image from "next/image";
+import { motion } from "framer-motion";
+
 const Service = () => {
   const services = [
     {
@@ -9,7 +11,8 @@ const Service = () => {
       alt: "Landing Page Development",
       title: "Landing Page Development",
       description:
-        "We are providing the best landing page development services to our customers. Our team of experts is always ready to help you in creating a website that is both visually appealing and functional.",
+        "We create stunning, conversion-focused landing pages that capture attention and drive results. Our pages are optimized for both desktop and mobile devices.",
+      icon: "🚀",
     },
     {
       id: 2,
@@ -17,7 +20,8 @@ const Service = () => {
       alt: "Web App Development",
       title: "Web App Development",
       description:
-        "We are providing the best web app development services to our customers. Our team of experts is always ready to help you in creating a website that is both visually appealing and functional.",
+        "From simple websites to complex web applications, we build scalable solutions using cutting-edge technologies and best practices.",
+      icon: "💻",
     },
     {
       id: 3,
@@ -25,7 +29,8 @@ const Service = () => {
       alt: "App Development",
       title: "App Development",
       description:
-        "We are providing the best app development services to our customers. Our team of experts is always ready to help you in creating an app that is both functional and visually appealing.",
+        "Native and cross-platform mobile applications that deliver exceptional user experiences across all devices and platforms.",
+      icon: "📱",
     },
     {
       id: 4,
@@ -33,7 +38,8 @@ const Service = () => {
       alt: "POS Software",
       title: "Custom POS",
       description:
-        "We are providing the best custom point of sale(POS) services to our customers. Our team of experts is always ready to help you in creating a custom POS that is both functional and visually appealing.",
+        "Tailored point-of-sale solutions that streamline your business operations and enhance customer service efficiency.",
+      icon: "🏪",
     },
     {
       id: 5,
@@ -41,7 +47,8 @@ const Service = () => {
       alt: "UI/UX Design",
       title: "UI/UX Design",
       description:
-        "We are providing the best UI/UX design services to our customers. Our team of experts is always ready to help you in creating a UI/UX design that is both functional and visually appealing.",
+        "User-centered design solutions that combine aesthetics with functionality to create engaging and intuitive digital experiences.",
+      icon: "🎨",
     },
     {
       id: 6,
@@ -49,52 +56,70 @@ const Service = () => {
       alt: "Digital Marketing",
       title: "Digital Marketing",
       description:
-        "We are providing the best digital marketing services to our customers. Our team of experts is always ready to help you in creating a digital marketing campaign that is both functional and visually appealing.",
+        "Strategic digital marketing campaigns that boost your online presence and drive meaningful engagement with your target audience.",
+      icon: "📈",
     },
   ];
   return (
-    <div id="services" className=" px-5 min-h-screen my-32">
-      <div className="flex justify-center items-center flex-col gap-5">
-        <div className="flex justify-center items-center flex-col gap-1 ">
-          <h1 className="text-3xl md:text-4xl tracking-widest uppercase  font-bold ">
+    <div id="services" className="px-5 min-h-screen py-32 overflow-hidden">
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        className="flex justify-center items-center flex-col gap-5"
+      >
+        <div className="flex justify-center items-center flex-col gap-3">
+          <span className="text-blue-500 text-lg font-medium">What We Offer</span>
+          <h1 className="text-4xl md:text-5xl text-center font-bold">
             Our Services
           </h1>
-          <span className="bg-blue-500 w-24 h-[5px] rounded-full"></span>
+          <div className="flex items-center gap-2">
+            <span className="bg-blue-500 w-8 h-1 rounded-full"></span>
+            <span className="bg-blue-500 w-3 h-1 rounded-full"></span>
+            <span className="bg-blue-500 w-1 h-1 rounded-full"></span>
+          </div>
         </div>
-        <p className="text-center text-slate-400 max-w-[650px] mb-10">
-          We provide a wide range of services to our customers, including
-          Landing Page Development, Web App Development, Mobile App Development,
-          Custom Point of Sale (POS) Software,UI/UX Design, Digital Marketing
-          and more.
+        <p className="text-center text-slate-400 max-w-[800px] text-lg leading-relaxed mb-10">
+          Elevate your digital presence with our comprehensive suite of professional services. 
+          We combine innovation with expertise to deliver solutions that drive your business forward.
         </p>
-      </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3  gap-8 relative">
-        <div className="bg-gradient-to-r from-blue-500 to-blue-600 h-[30vh] w-[30vw] blur-3xl  rounded-full absolute top-10 -left-20 "></div>
-        <div className="bg-gradient-to-r from-blue-500 to-blue-600 h-[30vh] w-[30vw] blur-3xl  rounded-full absolute  -right-20 bottom-10 "></div>
-        {services.map((service, index) => {
-          return (
-            <div
-              key={service.id}
-              className="flex flex-col z-10 items-center gap-6 p-4 border border-slate-600 rounded-lg shadow-lg bg-slate-950 hover:scale-105 duration-300"
-            >
-              <Image
-                src={service.imgSrc}
-                alt={service.alt}
-                width={640} // Set the width of the image
-                height={256} // Set the height of the image
-                className={`w-full h-64 bg-black overflow-hidden rounded-xl object-cover ${
-                  index % 2 === 0 ? "object-center" : "object-center"
-                }`}
-              />
-              <div className="px-4 py-1 flex justify-center items-center flex-col gap-3 text-center">
-                <h2 className="text-3xl font-semibold text-white mb-2">
+      </motion.div>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 relative">
+      
+
+        {services.map((service, index) => (
+          <motion.div
+            key={service.id}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: index * 0.1 }}
+            className="group relative z-10"
+          >
+            <div className="flex flex-col h-full p-6 rounded-xl bg-gradient-to-b from-slate-900 to-slate-950 border border-slate-800 hover:border-blue-500/50 transition-all duration-300 shadow-lg hover:shadow-blue-500/5">
+              <div className="mb-6 relative overflow-hidden rounded-lg">
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent z-10"></div>
+                <Image
+                  src={service.imgSrc}
+                  alt={service.alt}
+                  width={640}
+                  height={256}
+                  className="w-full h-48 object-cover transform group-hover:scale-105 transition-transform duration-300"
+                />
+                <span className="absolute top-4 right-4 text-3xl z-20">{service.icon}</span>
+              </div>
+              <div className="flex-1 flex flex-col">
+                <h2 className="text-2xl font-bold mb-3 text-white group-hover:text-blue-400 transition-colors duration-300">
                   {service.title}
                 </h2>
-                <p className="text-lg text-slate-300">{service.description}</p>
+                <p className="text-slate-400 leading-relaxed flex-1">
+                  {service.description}
+                </p>
+              
               </div>
             </div>
-          );
-        })}
+          </motion.div>
+        ))}
       </div>
     </div>
   );

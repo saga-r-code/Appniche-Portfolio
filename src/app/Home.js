@@ -4,7 +4,7 @@ import React from "react";
 const Home = () => {
   return (
     <div className="home-container  relative">
-      <div className="bg-[linear-gradient(to_right_top,_#151533,_#151530,_#16162d,_#16162a,_#161627)] h-[40vh] w-[40vw] blur-3xl  rounded-full absolute top-1/4 -left-1/4 "></div>
+      <div className="bg-[linear-gradient(to_right_top,_#151533,_#151530,_#16162d,_#16162a,_#161627)] h-[40vh] w-[40vw] blur-3xl  rounded-full absolute top-1/4 -left-1/4 "></div>z
       <div className="bg-[linear-gradient(to_right_top,_#201823,_#1f1822,_#1e1821,_#1d1820,_#1c181f)] h-[40vh] w-[40vw] blur-2xl  rounded-full absolute  -right-1/4 bottom-10"></div>
       <div className="flex justify-center items-center gap-5  flex-col h-dvh xl:min-h-screen px-5 relative z-20">
         <h1 className="text-4xl md:text-6xl text-center  font-bold text-wrap tracking-wide">

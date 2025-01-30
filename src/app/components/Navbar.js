@@ -11,54 +11,57 @@ const Navbar = () => {
   };
 
   return (
-    <div className="fixed w-full backdrop-blur-xl shadow-md shadow-slate-400 z-50">
-      <div className="flex justify-between items-center px-5 md:px-6 lg:px-14 py-5 text-white">
-        <h1 className="text-2xl sm:text-3xl md:text-2xl lg:text-3xl xl:text-4xl tracking-tighter font-bold gradient-text bg-gradient-to-r from-blue-500 to-blue-800">
-          <a href="#">Appniche Technology</a>
+    <div className="fixed w-full backdrop-blur-lg  shadow-lg shadow-neutral-800  z-50 transition-all duration-300">
+      <div className="flex justify-between items-center px-5 md:px-8 lg:px-16 py-5 text-white  mx-auto">
+        <h1 className="text-2xl sm:text-3xl md:text-2xl lg:text-3xl xl:text-4xl font-bold">
+          <a href="#" className="bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent hover:from-purple-500 hover:to-indigo-500 transition-all duration-300">
+            Appniche Technology
+          </a>
         </h1>
 
         {/* Toggle Button for Mobile */}
-        <div className="md:hidden cursor-pointer" onClick={handleToggle}>
-          {toggle ? <ImCross className="text-xl" /> : <RiMenuFold3Line className="text-2xl" />}
+        <div className="md:hidden cursor-pointer p-2 hover:bg-white/10 rounded-lg transition-all duration-300" onClick={handleToggle}>
+          {toggle ? 
+            <ImCross className="text-xl text-indigo-400" /> : 
+            <RiMenuFold3Line className="text-2xl text-indigo-400" />
+          }
         </div>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex md:items-center md:gap-8 text-slate-400 tracking-wider font-semibold text-base">
+        <div className="hidden md:flex md:items-center md:gap-8">
           <ul className="flex justify-center items-center gap-8">
-            <li className="hover:text-blue-400 cursor-pointer">
-              <a href="#about">About Us</a>
-            </li>
-            <li className="hover:text-blue-400 cursor-pointer">
-              <a href="#services">Services</a>
-            </li>
-            <li className="hover:text-blue-400 cursor-pointer">
-              <a href="#projects">Projects</a>
-            </li>
-            <li className="hover:text-blue-400 cursor-pointer">
-              <a href="#contact">Contact</a>
-            </li>
+            {['About Us', 'Services', 'Projects', 'Contact'].map((item) => (
+              <li key={item} className="relative group">
+                <a 
+                  href={`#${item.toLowerCase().replace(' ', '')}`}
+                  className="text-gray-300 hover:text-white font-medium tracking-wide transition-colors duration-300"
+                >
+                  {item}
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-600 to-indigo-600 group-hover:w-full transition-all duration-300"></span>
+                </a>
+              </li>
+            ))}
           </ul>
         </div>
 
         {/* Mobile Menu */}
-        {toggle && (
-          <div className="absolute top-[70px] h-dvh left-0 w-full bg-black z-50 text-slate-400 tracking-wider font-semibold text-lg flex flex-col gap-6 py-4 px-5">
-            <ul className="flex flex-col items-start gap-20 py-20">
-              <li className="hover:text-blue-400 cursor-pointer border-b-2 w-full">
-                <a href="#about" onClick={handleToggle}>About Us</a>
+        <div className={`absolute top-full left-0 w-full bg-gradient-to-b from-black/95 to-black/90 backdrop-blur-xl transform transition-all duration-300 ease-in-out ${
+          toggle ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0 pointer-events-none'
+        }`}>
+          <ul className="flex flex-col items-start gap-8 py-8 px-6">
+            {['About Us', 'Services', 'Projects', 'Contact'].map((item) => (
+              <li key={item} className="w-full">
+                <a
+                  href={`#${item.toLowerCase().replace(' ', '')}`}
+                  onClick={handleToggle}
+                  className="block w-full py-2 text-gray-300 hover:text-white font-medium tracking-wide border-b border-gray-800 hover:border-indigo-500 transition-all duration-300"
+                >
+                  {item}
+                </a>
               </li>
-              <li className="hover:text-blue-400 cursor-pointer border-b-2 w-full">
-                <a href="#services" onClick={handleToggle}>Services</a>
-              </li>
-              <li className="hover:text-blue-400 cursor-pointer border-b-2 w-full">
-                <a href="#projects" onClick={handleToggle}>Projects</a>
-              </li>
-              <li className="hover:text-blue-400 cursor-pointer border-b-2 w-full">
-                <a href="#contact" onClick={handleToggle}>Contact</a>
-              </li>
-            </ul>
-          </div>
-        )}
+            ))}
+          </ul>
+        </div>
       </div>
     </div>
   );
